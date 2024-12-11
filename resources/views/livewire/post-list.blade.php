@@ -38,7 +38,7 @@
     </div>
     <div class="py-4">
         @foreach ($this->posts as $post)
-            <x-posts.post-items :post="$post" />
+            <x-posts.post-items :key="'post->item' . $post->id" :post="$post" />
         @endforeach
     </div>
     {{ $this->posts->onEachSide(1)->links() }}
