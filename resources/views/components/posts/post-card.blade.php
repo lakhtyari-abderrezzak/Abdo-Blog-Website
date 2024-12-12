@@ -7,7 +7,7 @@
     </a>
     <div class="mt-3">
         <div class="flex items-center mb-2">
-            @if ($category = $post->categories()->first())
+            @if ($category = $post->categories->first())
                 <x-posts.badge
                     href="{{ route('posts.index', ['category'=>$category->title])}}" 
                     wire:navigate 
