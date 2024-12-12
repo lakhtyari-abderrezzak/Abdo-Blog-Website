@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -45,6 +46,7 @@ class CommentResource extends Resource
                 TextColumn::make('id'),
                 TextColumn::make('user.name'),
                 TextColumn::make('post.title'),
+                ImageColumn::make('post.image'),
                 TextColumn::make('comment'),
             ])
             ->filters([
