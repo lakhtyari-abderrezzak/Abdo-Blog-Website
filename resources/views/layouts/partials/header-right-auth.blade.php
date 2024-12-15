@@ -4,7 +4,7 @@
         @can('admin-view', App\Model\User::class)
             <div>
                 <x-nav-link :navigate="false" href="{{ route('filament.admin.auth.login') }}" :active="request()->routeIs('filament.admin.auth.login')">
-                    {{ __('Admin') }}
+                    {{ __('home_lang.admin') }}
                 </x-nav-link>
             </div>
         @endcan
@@ -34,11 +34,11 @@
             <x-slot name="content">
                 <!-- Account Management -->
                 <div class="block px-4 py-2 text-xs text-gray-400">
-                    {{ __('Manage Account') }}
+                    {{ __('home_lang.manage_account') }}
                 </div>
 
                 <x-dropdown-link wire:navigate href="{{ route('profile.show') }}">
-                    {{ __('Profile') }}
+                    {{ __('home_lang.profile') }}
                 </x-dropdown-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -54,7 +54,7 @@
                     @csrf
 
                     <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('home_lang.logout') }}
                     </x-dropdown-link>
                 </form>
             </x-slot>

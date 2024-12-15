@@ -30,9 +30,9 @@
         </div>
         <div class="flex items-center space-x-4 font-light ">
             <button class="{{ $sort === 'asc' ? 'text-gray-900 border-b border-gray-700' : 'text-gray-500' }} py-4"
-                wire:click="sortHelper('desc')">Oldest</button>
+                wire:click="sortHelper('desc')"> {{ __('blog_lang.oldest') }} </button>
             <button class="{{ $sort === 'desc' ? 'text-gray-900 border-b border-gray-700' : 'text-gray-500' }} py-4 "
-                wire:click="sortHelper('asc')">Latest</button>
+                wire:click="sortHelper('asc')">{{ __('blog_lang.latest') }}</button>
 
         </div>
     </div>
