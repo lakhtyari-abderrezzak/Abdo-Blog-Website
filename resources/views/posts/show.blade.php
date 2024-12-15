@@ -7,14 +7,14 @@
         <div class="mt-2 flex justify-between items-center">
             <div class="flex py-5 text-base items-center">
                 <x-posts.author size="md" :author="$post->author" />
-                <span class="text-gray-500 text-sm">| {{ $post->getMinRead() }} min read</span>
+                <span class="text-gray-500 text-sm">| {{ $post->getMinRead() }} {{ __('blog_lang.min_read') }} </span>
             </div>
             <div class="flex items-center">
                 <span class="text-gray-500 mr-2">
                     @if ($post->published_at)
                         {{ $post->published_at->diffForHumans() }}
                     @else
-                        <span>Not published yet</span>
+                        <span>{{ __('blog_lang.not_published') }}</span>
                     @endif
                 </span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.3"
