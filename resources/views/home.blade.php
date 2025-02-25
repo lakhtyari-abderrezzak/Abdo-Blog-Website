@@ -12,22 +12,25 @@
 
 
     <div class="mb-10">
-        <div class="mb-16">
-            <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">{{ __('home_lang.featured_posts') }}</h2>
-            <div class="w-full">
-                <div class="grid grid-cols-3 gap-10 w-full">
-                    @foreach ($featuredPost as $post)
-                        <div class="md:col-span-1 col-span-3">
-                            <x-posts.post-card :post="$post"/>
-                        </div>
-                    @endforeach
+        @if ($featuredPost->isNotEmpty())
+            <div class="mb-16">
+                <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">{{ __('home_lang.featured_posts') }}</h2>
+                <div class="w-full">
+                    <div class="grid grid-cols-3 gap-10 w-full">
+                        @foreach ($featuredPost as $post)
+                            <div class="md:col-span-1 col-span-3">
+                                <x-posts.post-card :post="$post"/>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
+                <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold"
+                    href="{{route('posts.index')}}">{{ __('home_lang.more_posts') }}</a>
             </div>
-            <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold"
-                href="http://127.0.0.1:8000/blog">{{ __('home_lang.more_posts') }}</a>
-        </div>
+        @endif
         <hr>
 
+        @if ($latestPost->isNotEmpty())
         <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">{{ __('home_lang.latest_posts') }}</h2>
         <div class="w-full mb-5">
             <div class="grid grid-cols-3 gap-10 w-full">
@@ -38,7 +41,8 @@
                 @endforeach
             </div>
         </div>
-        <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold" href="http://127.0.0.1:8000/blog">{{ __('home_lang.more_posts') }}</a>
+        <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold" href="{{route('posts.index')}}">{{ __('home_lang.more_posts') }}</a>
+        @endif
     </div>
 
 

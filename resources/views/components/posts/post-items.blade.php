@@ -27,7 +27,7 @@
             </h2>
 
             <p class="mt-2 text-base text-gray-700 font-light">
-                {{ strip_tags(Str::limit($post->body, 150, '...'), '<b><i><u><strong><em><a>') }}
+                {!! strip_tags(Str::limit( $post->body , 300, '...'), '<b><i><u><strong><em><a>') !!}
             </p>
 
             <div class="article-actions-bar mt-6 flex items-center justify-between">
